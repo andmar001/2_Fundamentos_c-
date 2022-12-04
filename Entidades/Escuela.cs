@@ -20,6 +20,8 @@ namespace Etapa1.Entidades
 
         public Curso[] Cursos { get; set; }
 
+        public List<Curso> ListaCursos { get; set; }
+
         public Escuela(string nombre, int año) => (Nombre, AñoCreacion) = (nombre, año);
 
         public Escuela (string nombre,  

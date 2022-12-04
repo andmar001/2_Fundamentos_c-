@@ -24,3 +24,15 @@ Concurrent
 
 # Ver todas accediendo a su tipo
 System.Collections.Generic
+
+metodos de las listas 
+- remover
+otra_coleccion.Clear();
+- remover
+otra_coleccion.Clear();
+
+// escuela.ListaCursos.Remove(otra_coleccion[0]);  //por index especifico
+// escuela.ListaCursos.Remove(tmp);  //por objeto especifico
+
+# removeAll  se le pasa un predicadom
+otra_coleccion.RemoveAll(delegate (Curso obj) { return obj.Nombre == "301"; });
