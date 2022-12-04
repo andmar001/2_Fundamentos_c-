@@ -11,7 +11,7 @@ namespace Etapa1.Entidades
         public string Nombre { get; set; }
         public TiposJornada Jornada { get; set; }
         public Curso() => UniqueId = Guid.NewGuid().ToString();
-        
+
         //recorrido por for
         public static void ImprimirFor(Curso[] arreglo)
         {
@@ -19,7 +19,7 @@ namespace Etapa1.Entidades
             {
                 Console.WriteLine($"Nombre escuela: {arreglo[i].Nombre}, Id: {arreglo[i].UniqueId}");
             }
-        }  
+        }
         //recorrido por foreach
         public static void ImprimirForEach(Curso[] arreglo)
         {
@@ -32,7 +32,7 @@ namespace Etapa1.Entidades
         public static void ImprimirWhile(Curso[] arreglo)
         {
             int i = 0;
-            while( i <= arreglo.Length)
+            while (i <= arreglo.Length)
             {
                 Console.WriteLine($"Nombre curso: {arreglo[i].Nombre}, Id: {arreglo[i].UniqueId}");
                 i++;
@@ -45,9 +45,24 @@ namespace Etapa1.Entidades
             do
             {
                 Console.WriteLine($"Nombre curso: {arreglo[i].Nombre}, Id: {arreglo[i].UniqueId}");
-            } while (i <= arreglo.Length);
+                i++;
+            } while (i < arreglo.Length);
         }
 
+        public static void ImprimirCursosEscuela(Escuela escuela)
+        {
+            Console.WriteLine("===============");
+            Console.WriteLine("Cursos de la escuela");
+            Console.WriteLine("===============");
 
-    }     
+            // Validar que la escuela no sea nulla
+            if (escuela != null && escuela.Cursos != null)
+            {
+                foreach (var curso in escuela.Cursos)
+                {
+                    Console.WriteLine($"Nombre curso: {curso.Nombre}, Id: {curso.UniqueId}");
+                }
+            }
+        }
+    }
 }

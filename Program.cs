@@ -1,9 +1,9 @@
 ﻿using System.Net;
 using Etapa1.Entidades;
-
+using static System.Console;    //imprimir solo con WriteLine, sin Console.WriteLine
 public static class Program
 {
-    public static void Main(string [] args)
+    public static void Main(string[] args)
     {
         Escuela escuela = new Escuela("Platzi Academy", 2012, TiposEscuela.Primaria, pais: "Colombia", ciudad: "Bogotá");
 
@@ -43,25 +43,62 @@ public static class Program
             Console.WriteLine($"Nombre escuela: {arregloCurso[i].Nombre}, Id: {arregloCurso[i].UniqueId}");
         }
 
-        System.Console.WriteLine("Arreglos linea por linea");
-        System.Console.WriteLine("===============");
+        Console.WriteLine("Arreglos linea por linea");
+        Console.WriteLine("===============");
         Console.WriteLine(arregloCurso[0].Nombre + ", " + arregloCurso[0].UniqueId);
         Console.WriteLine($"{arregloCurso[1].Nombre}, {arregloCurso[1].UniqueId}");
         Console.WriteLine(arregloCurso[2]);
 
-        System.Console.WriteLine("Colecciones");
+        Console.WriteLine("Colecciones");
 
-        System.Console.WriteLine("======Por for=========");
+        Console.WriteLine("======Por for=========");
         Curso.ImprimirFor(arregloCurso);
-        System.Console.WriteLine("===============");
-        System.Console.WriteLine("======Por foreach=========");
+        Console.WriteLine("===============");
+        Console.WriteLine("======Por foreach=========");
         Curso.ImprimirForEach(arregloCurso);
-        System.Console.WriteLine("===============");
-        System.Console.WriteLine("======Por while=========");
-        Curso.ImprimirWhile(arregloCurso);
-        System.Console.WriteLine("===============");
-        System.Console.WriteLine("======Por do while=========");
-        Curso.ImprimirDoWhile(arregloCurso);
+        Console.WriteLine("===============");
+        Console.WriteLine("======Por while=========");
+        // Curso.ImprimirWhile(arregloCurso);
+        Console.WriteLine("===============");
+        Console.WriteLine("======Por do while=========");
+        // Curso.ImprimirDoWhile(arregloCurso);
+
+        Console.WriteLine("===============");
+        Console.WriteLine("===============");
+        Console.WriteLine("Formato correcto de impresion");
+       
+        Curso[] misCursos =
+        {
+            new Curso() { Nombre = "101", Jornada = TiposJornada.Mañana },
+            new Curso() { Nombre = "201", Jornada = TiposJornada.Noche },
+            new Curso() { Nombre = "301", Jornada = TiposJornada.Tarde }
+        };
+
+        escuela.Cursos = misCursos;   
+
+        foreach (var item in misCursos)
+        {
+            Console.WriteLine($"Nombre escuela: {item.Nombre}, Id: {item.UniqueId}");
+        }
+
+        Console.WriteLine("===============");
+        Console.WriteLine("===============");
+        escuela.Cursos = new Curso[] 
+        {
+            new Curso() { Nombre = "python", Jornada = TiposJornada.Mañana },
+            new Curso() { Nombre = "java", Jornada = TiposJornada.Noche },
+            new Curso() { Nombre = "c", Jornada = TiposJornada.Tarde }
+        }; 
+        foreach (var item in misCursos)
+        {
+            Console.WriteLine($"Nombre escuela: {item.Nombre}, Id: {item.UniqueId}");
+        }
+
+        Escuela escuela_dos = new Escuela("Platzi Academy", 2012, TiposEscuela.Primaria, pais: "Colombia", ciudad: "Bogotá");
+        escuela_dos = null;
+
+        Console.WriteLine("===============");
+        Console.WriteLine("==============");
 
     }
 
