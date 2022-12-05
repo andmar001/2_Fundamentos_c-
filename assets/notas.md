@@ -46,3 +46,10 @@ Por conversion los metodos inician en mayusculas
 # Predicados 
 Son metodos  que deben devolver un boolean.
 Son funciones como parametros dentro de otra funcion
+
+# Comentarios ---->    ///
+Se colocan los 3 slash /// para poner una descripcion de lo que hace el metodo
+/// <summary>
+/// Esta clase imprime
+/// </summary>
+/// <param name="escuela"></param>
