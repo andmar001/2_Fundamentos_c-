@@ -31,24 +31,26 @@ public static class Program
             new Curso() { Jornada = TiposJornada.Tarde },
         };
 
-        Curso tmp = new Curso() { Nombre = "101-Vacacional", Jornada = TiposJornada.Noche };
+        // Curso tmp = new Curso() { Nombre = "101-Vacacional", Jornada = TiposJornada.Noche };
 
         // agregar dos colecciones en una sola 
         escuela.ListaCursos.AddRange(otra_coleccion);
-        escuela.ListaCursos.Add(tmp);
-        Console.WriteLine("Curso hash" + tmp.GetHashCode());
+        // escuela.ListaCursos.Add(tmp);
+        // Console.WriteLine("Curso hash ->" + tmp.GetHashCode());
         ImprimirCursosEscuela(escuela);
         //otra_coleccion.Clear();
 
         // eliminar 
         // escuela.ListaCursos.Remove(otra_coleccion[0]);  //por index especifico
         // escuela.ListaCursos.Remove(tmp);  //por objeto especifico
+
         Predicate<Curso> miAlgoritmo = Predicado;  // delegado
-        escuela.ListaCursos.RemoveAll(Predicado);
+        // escuela.ListaCursos.RemoveAll(Predicado);
+        escuela.ListaCursos.RemoveAll(miAlgoritmo);  
         ImprimirCursosEscuela(escuela);
     }
 
-    private static bool Predicado(Curso curobj)
+    private static bool Predicado(Curso curobj)  //es como un apuntador a una funcion
     {
         return curobj.Nombre == "301"; //eliminar todos los cursos con nombre 301
     }

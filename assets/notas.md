@@ -36,3 +36,13 @@ otra_coleccion.Clear();
 
 # removeAll  se le pasa un predicadom
 otra_coleccion.RemoveAll(delegate (Curso obj) { return obj.Nombre == "301"; });
+
+# hashcode
+Es un codigo unico de los objetos
+
+# metodos
+Por conversion los metodos inician en mayusculas
+
+# Predicados 
+Son metodos  que deben devolver un boolean.
+Son funciones como parametros dentro de otra funcion
