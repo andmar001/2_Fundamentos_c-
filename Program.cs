@@ -11,8 +11,15 @@ public static class Program
     {
         var engine = new EscuelaEngine();
         engine.Inicializar();
-        WriteLine("==============");
+
+        Printer.DibujarTitulo("Welcome to the school");
+        Printer.SonidoBeep();
+        Printer.SonidoBeep(1000, cantidad:10); // asignando valores a la funcion
         ImprimirCursosEscuela(engine.Escuela);
+        
+        //invocar un metodo de la clase static
+        // Printer.DibujarLinea(20);
+        
        
     }
 
@@ -24,9 +31,8 @@ public static class Program
   
     private static void ImprimirCursosEscuela(Escuela escuela)
     {
-        WriteLine("==============");
-        WriteLine("Cursos de la Escuela");
-        WriteLine("==============");
+        Printer.DibujarTitulo("Curso Escuela");
+
         if (escuela?.ListaCursos != null)
         {
             foreach (var curso in escuela.ListaCursos)

@@ -17,9 +17,9 @@ namespace App
 
         public void Inicializar()
         {
-            Escuela escuela = new Escuela("Platzi Academy", 2012, TiposEscuela.Primaria, ciudad: "Bogotá", pais:"Colombia");
+            Escuela = new Escuela("Platzi Academy", 2012, TiposEscuela.Primaria, ciudad: "Bogotá", pais:"Colombia");
 
-            escuela.ListaCursos = new List<Curso>()
+            Escuela.ListaCursos = new List<Curso>()
             {
                 new Curso() { Nombre = "101", Jornada = TiposJornada.Mañana },
                 new Curso() { Nombre = "201", Jornada = TiposJornada.Mañana },

@@ -53,3 +53,10 @@ Se colocan los 3 slash /// para poner una descripcion de lo que hace el metodo
 /// Esta clase imprime
 /// </summary>
 /// <param name="escuela"></param>
+
+# Static 
+Son clases que no nos permiten crear instancias por si solas generan los metodos asignados.
+Por ejemplo
+Console
+---->   Console.WriteLine();
+        Console.Beep()
