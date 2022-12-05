@@ -7,6 +7,7 @@ namespace Etapa1.Entidades
 {
     public class Escuela
     {
+        public string UniqueId { get; private set; } = Guid.NewGuid().ToString();   //asignacion de ui de manera directa
         string nombre;
         public string Nombre
         {
