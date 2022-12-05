@@ -7,47 +7,7 @@ public static class Program
 {
     public static void Main(string[] args)
     {
-        Escuela escuela = new Escuela("Platzi Academy", 2012, TiposEscuela.Primaria, ciudad: "Bogotá");
-
-        escuela.ListaCursos = new List<Curso>()
-        {
-            new Curso() { Nombre = "101", Jornada = TiposJornada.Mañana },
-            new Curso() { Nombre = "201", Jornada = TiposJornada.Mañana },
-            new Curso() { Nombre = "301", Jornada = TiposJornada.Mañana },
-        };
-
-        System.Console.WriteLine("Lista original: " + escuela.ListaCursos.Count());
-
-        // add new elements
-        escuela.ListaCursos.Add(new Curso() { Nombre = "102", Jornada = TiposJornada.Mañana });
-        escuela.ListaCursos.Add(new Curso() { Nombre = "202", Jornada = TiposJornada.Tarde });
-
-        System.Console.WriteLine("Lista nuevos valores: " + escuela.ListaCursos.Count());
-
-        var otra_coleccion = new List<Curso>() 
-        {
-            new Curso() { Nombre = "401", Jornada = TiposJornada.Mañana },
-            new Curso() { Nombre = "501", Jornada = TiposJornada.Mañana },
-            new Curso() { Jornada = TiposJornada.Tarde },
-        };
-
-        // Curso tmp = new Curso() { Nombre = "101-Vacacional", Jornada = TiposJornada.Noche };
-
-        // agregar dos colecciones en una sola 
-        escuela.ListaCursos.AddRange(otra_coleccion);
-        // escuela.ListaCursos.Add(tmp);
-        // Console.WriteLine("Curso hash ->" + tmp.GetHashCode());
-        ImprimirCursosEscuela(escuela);
-        //otra_coleccion.Clear();
-
-        // eliminar 
-        // escuela.ListaCursos.Remove(otra_coleccion[0]);  //por index especifico
-        // escuela.ListaCursos.Remove(tmp);  //por objeto especifico
-
-        Predicate<Curso> miAlgoritmo = Predicado;  // delegado
-        // escuela.ListaCursos.RemoveAll(Predicado);
-        escuela.ListaCursos.RemoveAll(miAlgoritmo);  
-        ImprimirCursosEscuela(escuela);
+       
     }
 
     private static bool Predicado(Curso curobj)  //es como un apuntador a una funcion
