@@ -13,7 +13,7 @@ namespace Lambdas
         {
             Escuela escuela = new Escuela("Platzi Academy", 2012, TiposEscuela.Primaria, ciudad: "Bogotá");
 
-            escuela.ListaCursos = new List<Curso>()
+            escuela.Cursos = new List<Curso>()
             {
                 new Curso() { Nombre = "101", Jornada = TiposJornada.Mañana },
                 new Curso() { Nombre = "201", Jornada = TiposJornada.Mañana },
@@ -28,16 +28,16 @@ namespace Lambdas
                 new Curso() { Nombre = "Python for dummies", Jornada = TiposJornada.Tarde },
             };
 
-            escuela.ListaCursos.AddRange(otra_coleccion);
+            escuela.Cursos.AddRange(otra_coleccion);
             //Predicado, forma de asiganar un delegado
-            // escuela.ListaCursos.RemoveAll(Predicado);
+            // escuela.Cursos.RemoveAll(Predicado);
             //Funciones lambda
-            escuela.ListaCursos.RemoveAll(delegate (Curso curso)
+            escuela.Cursos.RemoveAll(delegate (Curso curso)
                                         {
                                             return curso.Jornada == TiposJornada.Mañana;
                                         });
             //Funcion lambda con varios parametros
-            escuela.ListaCursos.RemoveAll((Curso curso) => curso.Nombre == "501" && curso.Jornada == TiposJornada.Mañana);
+            escuela.Cursos.RemoveAll((Curso curso) => curso.Nombre == "501" && curso.Jornada == TiposJornada.Mañana);
 
             ImprimirCursosEscuela(escuela);
 
@@ -52,9 +52,9 @@ namespace Lambdas
             WriteLine("==============");
             WriteLine("Cursos de la Escuela");
             WriteLine("==============");
-            if (escuela?.ListaCursos != null)
+            if (escuela?.Cursos != null)
             {
-                foreach (var curso in escuela.ListaCursos)
+                foreach (var curso in escuela.Cursos)
                 {
                     WriteLine($"Nombre: {curso.Nombre}, Jornada: {curso.Jornada}, Id: {curso.UniqueId}");
                 }

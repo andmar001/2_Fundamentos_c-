@@ -13,8 +13,8 @@ public static class Program
         engine.Inicializar();
 
         Printer.DibujarTitulo("Welcome to the school");
-        Printer.SonidoBeep();
-        Printer.SonidoBeep(1000, cantidad:10); // asignando valores a la funcion
+        // Printer.SonidoBeep();
+        Printer.SonidoBeep(1000, cantidad:3); // asignando valores a la funcion
         ImprimirCursosEscuela(engine.Escuela);
         
         //invocar un metodo de la clase static
@@ -33,9 +33,9 @@ public static class Program
     {
         Printer.DibujarTitulo("Curso Escuela");
 
-        if (escuela?.ListaCursos != null)
+        if (escuela?.Cursos != null)
         {
-            foreach (var curso in escuela.ListaCursos)
+            foreach (var curso in escuela.Cursos)
             {
                 WriteLine($"Nombre: {curso.Nombre}, Jornada: {curso.Jornada}, Id: {curso.UniqueId}");
             }

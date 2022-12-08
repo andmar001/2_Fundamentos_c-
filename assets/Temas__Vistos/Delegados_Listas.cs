@@ -13,20 +13,20 @@ namespace Delegados
         {
             Escuela escuela = new Escuela("Platzi Academy", 2012, TiposEscuela.Primaria, ciudad: "Bogotá");
 
-            escuela.ListaCursos = new List<Curso>()
+            escuela.Cursos = new List<Curso>()
             {
                 new Curso() { Nombre = "101", Jornada = TiposJornada.Mañana },
                 new Curso() { Nombre = "201", Jornada = TiposJornada.Mañana },
                 new Curso() { Nombre = "301", Jornada = TiposJornada.Mañana },
             };
 
-            System.Console.WriteLine("Lista original: " + escuela.ListaCursos.Count());
+            System.Console.WriteLine("Lista original: " + escuela.Cursos.Count());
 
             // add new elements
-            escuela.ListaCursos.Add(new Curso() { Nombre = "102", Jornada = TiposJornada.Mañana });
-            escuela.ListaCursos.Add(new Curso() { Nombre = "202", Jornada = TiposJornada.Tarde });
+            escuela.Cursos.Add(new Curso() { Nombre = "102", Jornada = TiposJornada.Mañana });
+            escuela.Cursos.Add(new Curso() { Nombre = "202", Jornada = TiposJornada.Tarde });
 
-            System.Console.WriteLine("Lista nuevos valores: " + escuela.ListaCursos.Count());
+            System.Console.WriteLine("Lista nuevos valores: " + escuela.Cursos.Count());
 
             var otra_coleccion = new List<Curso>() 
             {
@@ -38,7 +38,7 @@ namespace Delegados
             // Curso tmp = new Curso() { Nombre = "101-Vacacional", Jornada = TiposJornada.Noche };
 
             // agregar dos colecciones en una sola 
-            escuela.ListaCursos.AddRange(otra_coleccion);
+            escuela.Cursos.AddRange(otra_coleccion);
             // escuela.ListaCursos.Add(tmp);
             // Console.WriteLine("Curso hash ->" + tmp.GetHashCode());
             ImprimirCursosEscuela(escuela);
@@ -50,7 +50,7 @@ namespace Delegados
 
             Predicate<Curso> miAlgoritmo = Predicado;  // delegado
             // escuela.ListaCursos.RemoveAll(Predicado);
-            escuela.ListaCursos.RemoveAll(miAlgoritmo);  
+            escuela.Cursos.RemoveAll(miAlgoritmo);  
             ImprimirCursosEscuela(escuela);
         }
         private static bool Predicado(Curso curobj)  //es como un apuntador a una funcion
@@ -63,9 +63,9 @@ namespace Delegados
             WriteLine("==============");
             WriteLine("Cursos de la Escuela");
             WriteLine("==============");
-            if (escuela?.ListaCursos != null)
+            if (escuela?.Cursos != null)
             {
-                foreach (var curso in escuela.ListaCursos)
+                foreach (var curso in escuela.Cursos)
                 {
                     WriteLine($"Nombre: {curso.Nombre}, Jornada: {curso.Jornada}, Id: {curso.UniqueId}");
                 }

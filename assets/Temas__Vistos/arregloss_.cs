@@ -79,7 +79,7 @@ namespace Etapa1.assets.arreglos
                 new Curso() { Nombre = "301", Jornada = TiposJornada.Tarde }
             };
 
-            escuela.Cursos = misCursos;
+            // escuela.Cursos = misCursos;
 
             foreach (var item in misCursos)
             {
@@ -88,12 +88,12 @@ namespace Etapa1.assets.arreglos
 
             Console.WriteLine("===============");
             Console.WriteLine("===============");
-            escuela.Cursos = new Curso[]
-            {
-                new Curso() { Nombre = "python", Jornada = TiposJornada.Mañana },
-                new Curso() { Nombre = "java", Jornada = TiposJornada.Noche },
-                new Curso() { Nombre = "c", Jornada = TiposJornada.Tarde }
-            };
+            // escuela.Cursos = new Curso[]
+            // {
+            //     new Curso() { Nombre = "python", Jornada = TiposJornada.Mañana },
+            //     new Curso() { Nombre = "java", Jornada = TiposJornada.Noche },
+            //     new Curso() { Nombre = "c", Jornada = TiposJornada.Tarde }
+            // };
             foreach (var item in misCursos)
             {
                 Console.WriteLine($"Nombre escuela: {item.Nombre}, Id: {item.UniqueId}");

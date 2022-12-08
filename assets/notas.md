@@ -60,3 +60,5 @@ Por ejemplo
 Console
 ---->   Console.WriteLine();
         Console.Beep()
+
+# Ienumerable

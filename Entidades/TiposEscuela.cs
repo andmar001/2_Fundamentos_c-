@@ -7,8 +7,8 @@ namespace Etapa1.Entidades
 {
     public enum TiposEscuela
     {
-        Primaria = 0,
-        Secundaria = 1,
-        PreEscolar= 2
+        Primaria,
+        Secundaria,
+        PreEscolar
     }
 }
